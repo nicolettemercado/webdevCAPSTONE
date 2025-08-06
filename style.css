@@ -121,3 +121,33 @@ footer {
     padding: 12px 24px;
   }
 }
+
+
+#profiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.profile-card {
+  background: white;
+  border: 2px solid #ffb6c1;
+  border-radius: 16px;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 3px 3px #ff85c1;
+  text-align: center;
+  color: #4b2e2e;
+}
+
+.profile-card h3 {
+  margin: 0 0 8px;
+  color: #ff69b4;
+}
+
+.profile-card p {
+  margin: 4px 0;
+  font-size: 0.95em;
+}

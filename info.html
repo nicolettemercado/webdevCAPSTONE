@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<body onload="displayServices(); displayProfiles();">
 
   <nav>
     <ul>
@@ -20,17 +21,10 @@
     <h1>🌸 About Our Dog Sitting Services</h1>
 
     <h2>🐾 What We Offer</h2>
-    <ul>
-      <li>🦴 Daytime sitting: cozy naps and playtime</li>
-      <li>🌙 Overnight stays: bedtime stories and cuddles</li>
-      <li>🚶‍♀️ Walks: 30–60 minutes of tail-wagging joy</li>
-    </ul>
+    <ul id="service-list"></ul>
 
-    <h2>🐶 Meet Out Besties!</h2>
-    <ul>
-      <li>add dog profiles here</li>
-      
-    </ul>
+    <h2>🐶 Meet Our Besties!</h2>
+    <div id="profiles-container"></div>
 
     <h2>📞 Contact</h2>
     <p>Email: <a href="nicolette@dogsitting.com">nicolette@dogsitting.com</a></p>
@@ -41,5 +35,6 @@
     © 2025 Dog With A Day Care. Made with 🐾 and 💕
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
