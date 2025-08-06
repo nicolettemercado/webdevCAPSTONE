@@ -151,3 +151,63 @@ footer {
   margin: 4px 0;
   font-size: 0.95em;
 }
+.profile-card {
+  width: 200px;
+  height: 250px;
+  perspective: 1000px;
+  border-radius: 16px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  border-radius: 16px;
+  box-shadow: 3px 3px #ff85c1;
+}
+
+.profile-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.card-back {
+  background-color: #ffeef8;
+  color: #4b2e2e;
+  transform: rotateY(180deg);
+  padding: 16px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.dog-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
