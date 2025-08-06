@@ -1,3 +1,7 @@
+/* ---------------------------------- */
+/* 🌸 GLOBAL STYLES */
+/* ---------------------------------- */
+
 body {
   font-family: 'Cherry Bomb One', cursive, sans-serif;
 
@@ -122,6 +126,9 @@ footer {
   }
 }
 
+/* ---------------------------------- */
+/* INFO STYLES */
+/* ---------------------------------- */
 
 #profiles-container {
   display: flex;
@@ -211,3 +218,66 @@ footer {
   border-radius: 12px;
   margin-bottom: 10px;
 }
+
+/* ---------------------------------- */
+/* BOOKING STYLES */
+/* ---------------------------------- */
+
+/* Popup Modal */
+#popup-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#popup-content {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 4px 4px #ffb6c1;
+}
+
+.booking-card input {
+  padding: 10px;
+  border: 1px solid #ffb6c1;
+  border-radius: 8px;
+  width: 90%;
+}
+
+.booking-card button {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.booking-card button:hover {
+  background-color: #ff85c1;
+}
+
+.error-text {
+  color: hotpink;
+  font-size: 0.85em;
+}
+.booking-card {
+  position: relative;
+  border: 3px solid #ffb6c1;
+  border-radius: 30px;
+  box-shadow: 4px 4px #ff85c1;
+  padding: 20px;
+  background-color: #fff0f8;
+  box-shadow: 4px 4px #ff85c1;
+  margin-bottom: 30px;
+  text-align: center;
+}
+

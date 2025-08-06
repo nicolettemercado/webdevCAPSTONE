@@ -66,6 +66,22 @@ function displayProfiles() {
   });
 }
 
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const email = document.getElementById('email').value;
+  const error = document.getElementById('email-error');
+  if (!validateEmail(email)) {
+    error.textContent = "Please enter a valid email 💌";
+  } else {
+    error.textContent = "";
+    alert("Thank you! We'll contact you soon 🐾");
+  }
+}
 
 
 
