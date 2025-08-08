@@ -349,10 +349,23 @@ footer {
 }
 
 
-
 /* ---------------------------------- */
 /* BOOKING STYLES 
 /* ---------------------------------- */
+.booking-hours-note {
+  background-color: #ffe4f0;
+  border: 2px dashed #ff85c1;
+  border-radius: 20px;
+  padding: 15px 20px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-family: 'Cherry Bomb One', cursive;
+  color: #b3477f;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(179, 71, 127, 0.2);
+  user-select: none;
+}
 
 .booking-container {
   display: flex;
