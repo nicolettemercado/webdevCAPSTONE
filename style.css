@@ -222,6 +222,114 @@ footer {
   margin-bottom: 10px;
 }
 
+#service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.service-card {
+  background: #ffdef2;
+  border-radius: 20px;
+  width: 300px;
+  padding: 1.5rem;
+  font-family: 'Cherry Bomb One', cursive;
+  font-size: 1.1rem;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: floatCard 3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.service-card:hover .card-info {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.card-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem; 
+}
+
+.card-info {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.card-info > * {
+  margin: 0;
+  padding: 0;
+  max-width: 180px;  
+}
+
+.service-card:hover .card-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes floatCard {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+ 
+.service-intro {
+  background: #ffe4f0; 
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Cherry Bomb One', cursive;
+  color: #b3477f;
+  box-shadow: 0 6px 12px rgba(179, 71, 127, 0.3);
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: floatIntro 4s ease-in-out infinite;
+}
+
+.service-intro h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+@keyframes floatIntro {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 /* ---------------------------------- */
 /* BOOKING STYLES 
 /* ---------------------------------- */
@@ -239,10 +347,10 @@ footer {
   border: 4px dashed #ff85c1;
   border-radius: 30px;
   margin: 30px auto; 
-  max-width: 600px;
+  max-width: 500px;
   box-shadow: 5px 5px 15px rgba(255, 133, 193, 0.4);
   padding: 30px;
-  width: 600px;
+  width: 500px;
   text-align: center;
   transition: transform 0.3s ease;
 }

@@ -1,18 +1,42 @@
 const services = [
-  { name: "Daytime Playdate", price: 20 },
-  { name: "Puppy Sleepover", price: 30 },
-  { name: "Dog Walk (30 min)", price: 10 },
-  { name: "Dog Walk Extended (1 hour)", price: 15 }
+  {
+    id: 81995424,
+    name: "Daytime Playdate",
+    description: "A fun-filled few hours of supervised play and cuddles with other pups."
+  },
+  {
+    id: 81995819,
+    name: "Dog Walk",
+    description: "A 30-minute neighborhood stroll to stretch legs and sniff the world."
+  },
+  {
+    id: 81995828,
+    name: "Dog Walk (Extended)",
+    description: "An extended 60-minute walk for high-energy pups who need extra time."
+  },
+  { 
+    name: "Doggy Sleepovers",
+    description: "For overnight inquiries please email us at nicolette@dogsitting.com!"
+  }
 ];
 
+
 function displayServices() {
-  const list = document.getElementById('service-list');
+  const serviceList = document.getElementById("service-list");
+  serviceList.innerHTML = "";
+
   services.forEach(service => {
-    const li = document.createElement('li');
-    li.textContent = `${service.name} – $${service.price}`;
-    list.appendChild(li);
+    const card = document.createElement("div");
+    card.className = "service-card";
+    card.innerHTML = `
+      <div class="card-name">${service.name}</div>
+      <div class="card-info">${service.description}</div>
+    `;
+    serviceList.appendChild(card);
   });
 }
+
+
 
 const dogProfiles = [
   {

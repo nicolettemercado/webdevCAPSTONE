@@ -25,15 +25,14 @@ function showPopup(message, isError = false) {
   popupMessage.textContent = message;
   popupMessage.style.color = isError ? "red" : "green";
   
-  modal.style.display = "flex"; // Show popup
-}
+  modal.style.display = "flex"; 
 
 function closePopup() {
   const modal = document.getElementById("popupModal");
-  modal.style.display = "none"; // Hide popup
+  modal.style.display = "none";
 }
 
-// Close modal when clicking outside it
+
 window.addEventListener("click", function (e) {
   const modal = document.getElementById("popupModal");
   if (e.target === modal) {
