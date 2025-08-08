@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Book a Spot – Dog For A Day Care</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <nav>
     <ul>
       <li><a href="index.html">🏠 Home</a></li>
@@ -17,48 +16,28 @@
   </nav>
 
   <main>
-  <h1>💖 Book a Dog Sitting Session</h1>
-  <p>Please choose the right option below! 🐾</p>
+    <h1>💖 Book a Dog Sitting Session</h1>
+    <p>Please fill out the form below! 🐾</p>
 
-  <div class="booking-container">
+    <form id="bookingForm">
+      <label>First Name: <input type="text" id="firstName" required /></label><br />
+      <label>Last Name: <input type="text" id="lastName" required /></label><br />
+      <label>Email: <input type="email" id="email" required /></label><br />
+      <label>Additional Emails (comma-separated): <input type="text" id="additionalEmails" placeholder="Optional" /></label><br />
+      <label>Service:
+        <select id="serviceSelect" required>
+          <option value="">-- Select a service --</option>
+        </select>
+      </label><br />
+      <label>Date & Time: <input type="datetime-local" id="datetime" required /></label><br />
+      <button type="submit">Book Now</button>
+    </form>
 
-    
-    <section class="booking-card new-customer">
-      <h2>🆕 New Customer</h2>
-      
-      <form onsubmit="handleFormSubmit(event)">
-    <label for="email">If this is your first time booking, please provide your email 💌</label><br>
-    <input type="text" id="email" placeholder="Enter your email 💌" />
-    <div class="input-wrapper">
-    <span id="email-error" class="error-text"></span>
-    </div>
-  <br>
-  <button type="submit">Submit Email</button>
-</form>
+    <div id="bookingMessage"></div>
+  </main>
 
-    </section>
+  <footer>© 2025 Dog For A Day Care. Made with 🐾 and 💕</footer>
 
-    
-    <section class="booking-card returning-customer">
-      <h2>🔁 Returning Customer</h2>
-      <p>Already registered? Go ahead and book your session below! 🐶</p>
-
-      <div class="responsive-iframe-container">
-        <iframe 
-          src="https://yourname.neetocal.com/dog-sitting"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
-  </div>
-</main>
-
-
-  <footer>
-    © 2025 Dog For A Day Care. Made with 🐾 and 💕
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="booking.js"></script>
 </body>
 </html>
