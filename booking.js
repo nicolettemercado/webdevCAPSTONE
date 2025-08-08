@@ -4,7 +4,6 @@ const services = [
   { id: 81995828, name: "Dog Walk (Extended)" },
 ];
 
-
 const serviceSelect = document.getElementById("serviceSelect");
 services.forEach(service => {
   const option = document.createElement("option");
@@ -13,11 +12,34 @@ services.forEach(service => {
   serviceSelect.appendChild(option);
 });
 
-
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
+
+// ===== POPUP FUNCTIONS =====
+function showPopup(message, isError = false) {
+  const modal = document.getElementById("popupModal");
+  const popupMessage = document.getElementById("popupMessage");
+
+  popupMessage.textContent = message;
+  popupMessage.style.color = isError ? "red" : "green";
+  
+  modal.style.display = "flex"; // Show popup
+}
+
+function closePopup() {
+  const modal = document.getElementById("popupModal");
+  modal.style.display = "none"; // Hide popup
+}
+
+// Close modal when clicking outside it
+window.addEventListener("click", function (e) {
+  const modal = document.getElementById("popupModal");
+  if (e.target === modal) {
+    closePopup();
+  }
+});
 
 document.getElementById("bookingForm").addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -29,12 +51,10 @@ document.getElementById("bookingForm").addEventListener("submit", async function
   const serviceId = document.getElementById("serviceSelect").value;
   const datetime = document.getElementById("datetime").value;
 
-  
   if (!validateEmail(email)) {
-    return showMessage("Please enter a valid primary email.", true);
+    return showPopup("Please enter a valid primary email.", true);
   }
 
-  
   let additionalEmails = [];
   if (additionalEmailsRaw) {
     additionalEmails = additionalEmailsRaw
@@ -44,17 +64,17 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
     for (const em of additionalEmails) {
       if (!validateEmail(em)) {
-        return showMessage(`Invalid additional email detected: ${em}`, true);
+        return showPopup(`Invalid additional email detected: ${em}`, true);
       }
     }
   }
 
   if (!serviceId) {
-    return showMessage("Please select a service.", true);
+    return showPopup("Please select a service.", true);
   }
 
   if (!datetime) {
-    return showMessage("Please select a date and time.", true);
+    return showPopup("Please select a date and time.", true);
   }
 
   const bookingData = {
@@ -76,18 +96,12 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     const result = await response.json();
 
     if (response.ok) {
-      showMessage("✅ Booking confirmed! We'll be in touch soon.");
+      showPopup("✅ Booking confirmed! We'll be in touch soon.");
       document.getElementById("bookingForm").reset();
     } else {
-      showMessage(`❌ Error: ${result.details?.message || result.error || "Something went wrong."}`, true);
+      showPopup(`❌ Error: ${result.details?.message || result.error || "Something went wrong."}`, true);
     }
   } catch (error) {
-    showMessage(`❌ Network error: ${error.message}`, true);
+    showPopup(`❌ Network error: ${error.message}`, true);
   }
 });
-
-function showMessage(msg, isError = false) {
-  const msgDiv = document.getElementById("bookingMessage");
-  msgDiv.textContent = msg;
-  msgDiv.style.color = isError ? "red" : "green";
-}

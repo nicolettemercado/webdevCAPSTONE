@@ -1,8 +1,8 @@
 const services = [
-  { name: "Day Sitting", price: 20 },
-  { name: "Overnight Stay", price: 30 },
+  { name: "Daytime Playdate", price: 20 },
+  { name: "Puppy Sleepover", price: 30 },
   { name: "Dog Walk (30 min)", price: 10 },
-  { name: "Dog Walk (1 hour)", price: 15 }
+  { name: "Dog Walk Extended (1 hour)", price: 15 }
 ];
 
 function displayServices() {

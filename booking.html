@@ -16,9 +16,10 @@
   </nav>
 
   <main>
-    <h1>💖 Book a Dog Sitting Session</h1>
-    <p>Please fill out the form below! 🐾</p>
+    <h1>Book a Dog Sitting Session</h1>
+    <p>Please fill out the form below!</p>
 
+    <div class="booking-card">
     <form id="bookingForm">
       <label>First Name: <input type="text" id="firstName" required /></label><br />
       <label>Last Name: <input type="text" id="lastName" required /></label><br />
@@ -32,6 +33,7 @@
       <label>Date & Time: <input type="datetime-local" id="datetime" required /></label><br />
       <button type="submit">Book Now</button>
     </form>
+    </div>
 
     <div id="bookingMessage"></div>
   </main>
@@ -39,5 +41,12 @@
   <footer>© 2025 Dog For A Day Care. Made with 🐾 and 💕</footer>
 
   <script src="booking.js"></script>
+
+  <div id="popupModal" class="popup-modal">
+  <div class="popup-content">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    <p id="popupMessage"></p>
+  </div>
+</div>
 </body>
 </html>

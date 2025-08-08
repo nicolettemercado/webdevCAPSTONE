@@ -1,10 +1,9 @@
 /* ---------------------------------- */
-/* 🌸 GLOBAL STYLES */
+/* GLOBAL STYLES */
 /* ---------------------------------- */
 
 body {
   font-family: 'Cherry Bomb One', cursive, sans-serif;
-
   margin: 0;
   padding: 0;
   background-color: #ffeef8;
@@ -101,6 +100,10 @@ footer {
   border-top: 2px dashed #ffb6c1;
   margin-top: 30px;
 }
+
+/* ---------------------------------- */
+/* MEDIA QUERY FOR MOBILE */
+/* ---------------------------------- */
 
 @media screen and (max-width: 600px) {
   header, main, footer {
@@ -220,64 +223,111 @@ footer {
 }
 
 /* ---------------------------------- */
-/* BOOKING STYLES */
+/* BOOKING STYLES 
 /* ---------------------------------- */
 
-/* Popup Modal */
-#popup-modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  padding: 20px;
 }
 
-#popup-content {
-  background: white;
-  border-radius: 16px;
-  padding: 25px;
+.booking-card {
+  background: #fff0f8;
+  border: 4px dashed #ff85c1;
+  border-radius: 30px;
+  margin: 30px auto; 
+  max-width: 600px;
+  box-shadow: 5px 5px 15px rgba(255, 133, 193, 0.4);
+  padding: 30px;
+  width: 600px;
   text-align: center;
-  width: 300px;
-  box-shadow: 4px 4px #ffb6c1;
+  transition: transform 0.3s ease;
 }
 
-.booking-card input {
-  padding: 10px;
-  border: 1px solid #ffb6c1;
-  border-radius: 8px;
+.booking-card:hover {
+  transform: scale(1.05);
+  box-shadow: 7px 7px 25px rgba(255, 133, 193, 0.6);
+}
+
+.booking-card h2 {
+  color: #ff69b4;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px white;
+}
+
+.booking-card label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  color: #4b2e2e;
+}
+
+.booking-card input,
+.booking-card select,
+.booking-card button {
   width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  font-size: 16px;
+  box-shadow: inset 2px 2px 5px #fff0f8;
 }
 
 .booking-card button {
-  padding: 10px 20px;
   background-color: #ff69b4;
   color: white;
-  border: none;
-  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
+  box-shadow: 3px 3px #ff85c1;
+  transition: background-color 0.3s ease;
 }
 
 .booking-card button:hover {
   background-color: #ff85c1;
+  transform: scale(1.05);
 }
 
 .error-text {
   color: hotpink;
   font-size: 0.85em;
 }
-.booking-card {
-  position: relative;
-  border: 3px solid #ffb6c1;
-  border-radius: 30px;
-  box-shadow: 4px 4px #ff85c1;
-  padding: 20px;
-  background-color: #fff0f8;
-  box-shadow: 4px 4px #ff85c1;
-  margin-bottom: 30px;
-  text-align: center;
+
+.popup-modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
 }
 
+.popup-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 280px;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+#popupMessage {
+  font-size: 1.1em;
+}
