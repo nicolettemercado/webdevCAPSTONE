@@ -17,7 +17,7 @@ function validateEmail(email) {
   return regex.test(email);
 }
 
-// ===== POPUP FUNCTIONS =====
+
 function showPopup(message, isError = false) {
   const modal = document.getElementById("popupModal");
   const popupMessage = document.getElementById("popupMessage");
@@ -26,10 +26,11 @@ function showPopup(message, isError = false) {
   popupMessage.style.color = isError ? "red" : "green";
   
   modal.style.display = "flex"; 
+}
 
 function closePopup() {
   const modal = document.getElementById("popupModal");
-  modal.style.display = "none";
+  modal.style.display = "none"; 
 }
 
 

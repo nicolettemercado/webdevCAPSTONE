@@ -329,6 +329,26 @@ footer {
   }
 }
 
+.email-link {
+  color: #b3477f;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #ff6392;
+  text-decoration: underline;
+}
+
+.email-icon {
+  font-size: 1.1rem;
+}
+
+
 
 /* ---------------------------------- */
 /* BOOKING STYLES 
@@ -438,4 +458,177 @@ footer {
 
 #popupMessage {
   font-size: 1.1em;
+}
+
+/* ---------------------------------- */
+/* INDEX STYLES 
+/* ---------------------------------- */
+body {
+  background: linear-gradient(135deg, #fff0f6, #ffd1e3);
+  font-family: 'Cherry Bomb One', cursive;
+  color: #7a2a57;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  background: #ffb3ca;
+  padding: 1rem 0;
+  margin: 0;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 10px rgba(179, 71, 127, 0.3);
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff6392;
+}
+
+header {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  max-width: 700px;
+  padding: 1rem 2rem;
+  background: #ffe4f0;
+  border-radius: 25px;
+  box-shadow: 0 6px 15px rgba(179, 71, 127, 0.2);
+  animation: floatIntro 4s ease-in-out infinite;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.2rem;
+  color: #b3477f;
+  user-select: none;
+  text-shadow: 2px 2px 4px #f9c6d3;
+}
+
+header p {
+  font-size: 1.3rem;
+  color: #7a2a57;
+  user-select: none;
+}
+
+
+main {
+  text-align: center;
+  margin: 2rem auto 3rem;
+  max-width: 600px;
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  color: #9a4c77;
+}
+
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #ff6ea1;
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(255, 110, 161, 0.6);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.button:hover {
+  background: #ff4c8b;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 76, 139, 0.7);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  color: #b3477f;
+  margin-top: auto;
+  user-select: none;
+}
+
+@keyframes floatIntro {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background-image: url('images/nintendogs.JPEG');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 2rem auto;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 240, 250, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.hero-text {
+  text-align: center;
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-family: 'Cherry Bomb One', cursive;
+  font-size: 2.5rem;
+  color: #9a4c77;
+  margin: 0;
+  text-shadow: 1px 1px 3px #f88da3;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: #9a4c77;
+  text-shadow: 1px 1px 3px #f88da3;
+}
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-header {
+    min-height: 50vh;
+  }
 }
