@@ -30,7 +30,7 @@ An easy-to-use dog sitting app where users can book dog care sessions directly s
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/nicolettemercado/dog-for-a-day-care.git
+   git clone https://github.com/nicolettemercado/webdevCAPSTONE
    ```
 
 2. **Navigate to the project folder**:
