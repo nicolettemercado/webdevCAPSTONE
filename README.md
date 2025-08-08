@@ -35,7 +35,7 @@ An easy-to-use dog sitting app where users can book dog care sessions directly s
 
 2. **Navigate to the project folder**:
    ```bash
-   cd dog-for-a-day-care
+   cd webdevCAPSTONE
    ```
 
 3. **Open `index.html` or `booking.html` in your browser**.
