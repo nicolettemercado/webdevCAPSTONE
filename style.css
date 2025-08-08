@@ -607,7 +607,8 @@ footer {
 
 .hero-text h1 {
   font-family: 'Cherry Bomb One', cursive;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
   color: #9a4c77;
   margin: 0;
   text-shadow: 1px 1px 3px #f88da3;
@@ -619,6 +620,7 @@ footer {
   color: #9a4c77;
   text-shadow: 1px 1px 3px #f88da3;
 }
+
 @media (max-width: 600px) {
   .hero-text h1 {
     font-size: 1.8rem;
@@ -630,5 +632,52 @@ footer {
 
   .hero-header {
     min-height: 50vh;
+  }
+}
+
+/* Floating Paw Prints */
+.paw-container {
+  position: fixed;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.paw {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 10s infinite ease-in;
+  opacity: 0.4;
+}
+
+.paw:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.paw:nth-child(2) {
+  left: 50%;
+  animation-delay: 3s;
+}
+
+.paw:nth-child(3) {
+  left: 80%;
+  animation-delay: 6s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-60vh) rotate(10deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(-10deg);
+    opacity: 0;
   }
 }
